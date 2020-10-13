@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/style.css">
+<title>3 ways to IRC</title>
+<body>
+  <header>
+    <h1>gdamjan blog</h1>
+  </header>
+  <div class="page">
+    
+  
+  <div class="blog-post">
+  
+    <h1>3 ways to IRC</h1>
+  
+  <p class="meta">
+    2020-10-10
+  </p>
+  
+  <p>I've been using IRC for quite some time now, mainly to keep in touch with the global and local free-software communities and the people around the <a href="https://kika.spodeli.org/">Skopje Hacklab KIKA</a> (#lugola on freenode). Even at this age IRC is still used by many projects as one of the main communication platforms.</p>
+<p><a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC </a> is an old protocol, started its life in 1988, so using it in this age has its challenges. First of all, irc is a simple plain text protocol that assumes an always-on persistent TCP connection. If the connection is broken, you vanish from the network, and when you reconnect you've lost the discussion in the meantime. This is especially problematic today, when we expect to roam between wifi, mobile and wired networks, or put our laptops and mobile phones to sleep.</p>
+<p>There are some efforts in the <a href="https://ircv3.net/">IRCv3</a> community to extend and improve the protocol, by allowing for capability negotiation, message ids, replay of missed messages since the last id seen, and keeping a buffer for each user. But major irc networks like freenode haven't implemented those extensions yet, and considering the added cost per user, they probably never will.</p>
+<p>So these are the 3 ways that <strong>I</strong> use to connect to IRC from my laptop, phone and tablet, without having to compromise and miss "important" chat messages:</p>
+
+  <h2>IRC on mobile over matrix</h2>
+<p><a href="https://matrix.org/">Matrix</a> is a secure and advanced chat protocol designed for modern times. It uses http as transport but has strong support for reconciling the client and server state. In simple words, you don't miss chats when roaming or sleeping. Matrix has support for gateways to other chat networks, and one of those is the <a href="https://github.com/matrix-org/matrix-appservice-irc">irc gateway</a>. We (hacklab kika) host our own matrix server and irc gateway at <code>spodeli.org</code>, so I use that (find me at @gdamjan:spodeli.org). I use the Android app, also available on F-Droid, called <a href="https://f-droid.org/en/packages/im.vector.app/">Element</a> that connects to the matrix server, the matrix server connects to the irc gateway (they are on the same server), and then the irc gateway connects to freenode. Since the server can easily maintain a persistent TCP connection to freenode, there's no loss of data or chat history.</p>
+<p>Additionally Matrix also has a couple of desktop clients, and a <a href="https://github.com/vector-im/element-web">web app</a> interface, so I can use that in parallel in any modern browser. The matrix protocol, and its federated network is becoming very popular in the last years, replacing irc for organizations like Mozilla, and being implemented in governments throughout the world.</p>
+<h2>IRC on the desktop over znc</h2>
+<p>On my desktop/laptop I use the <a href="https://github.com/communi/communi-desktop">communi</a> built with Qt/QML. I like the minimalist look of communi and the quick navigation in the app.</p>
+<p>While communi does support IRCv3 extensions, freenode doesn't, so that doesn't fix the issues. The solution: I also run a <a href="https://znc.in/">znc</a> bouncer on a VPS, where it can maintain the persistent TCP connection to freenode. Znc and the <a href="https://wiki.znc.in/Playback">playback plugin</a>, support enough of IRCv3 to replay any missed messages when my laptop goes from one wifi network to another (or to a hotspot), or if my ADSL service reconnects, or my laptop is put to sleep, etc. As an added benefit, znc keeps my freenode registered nickname online at all times.</p>
+<h2>IRC in a web app</h2>
+<p>Sometimes I need to connect to irc from ad-hock computers. For example my experimental laptop with (currently) Fedora Silverblue which I haven't bothered to install communi on. Or my ChromeOS tablet which might not even support applications as such (ok - in truth it does support Crostini, a VM with containers on top of ChromeOS, it's a bit too much for an irc client). Or my parents computer where I only have a browser.</p>
+<p>The same vps that runs my znc also runs <a href="https://thelounge.chat/">the lounge</a>, a nodejs web app. Again, it can maintain the persistent TCP connection to freenode, and it keeps the buffer of unread messages for me when I'm offline. Open the web app from anywhere you get your chats, history, etc. Thelounge is better looking than the matrix web app Element, for now.</p>
+<p>My lounge account is configured to connect to my znc, so no matter if I'm on my laptops communi, or in the ChromeOS browser I always read and write from the same user. But that's fully optional.</p>
+<h2>End note</h2>
+<p>Hosting your own matrix, irc gateway, znc or thelounge servers might be complicated time consuming, and even expensive just to get reliably on irc. If you ask nicely on #lugola on freenode, you can get an account on any of these services we host :)</p>
+
+  
+  </div>
+
+
+  </div>
+  <footer>
+      All content is <a href="../public-domain">public domain</a>, except where otherwise noted.
+  </footer>
+</body>
