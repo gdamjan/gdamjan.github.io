@@ -36,6 +36,9 @@ header nav ul li {
     padding: 0;
 }
 
+footer {
+  font-size: smaller;
+}
 
 div.blog-post > h1:nth-child(1) {
   margin-bottom: 0;
