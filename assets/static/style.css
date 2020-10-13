@@ -1,0 +1,52 @@
+body {
+    font-family: 'DejaVu Sans', sans-serif;
+    margin: 50px 25px;
+}
+
+a {
+    color: #2a99b6;
+}
+
+a:hover {
+    color: #33bbdf;
+}
+
+header, footer, div.page {
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px 30px;
+}
+
+header h1 {
+    color: #169bbd;
+    margin: 0;
+    font-weight: normal;
+    font-size: 42px;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 8px 0 0;
+    padding: 0;
+}
+
+footer {
+  font-size: smaller;
+}
+
+div.blog-post > h1:nth-child(1) {
+  margin-bottom: 0;
+}
+
+div.blog-post > p.meta {
+  margin-top: 0;
+  color: #888;
+  font-size: smaller;
+}
+
