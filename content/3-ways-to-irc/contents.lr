@@ -31,7 +31,10 @@ My lounge account is configured to connect to my znc, so no matter if I'm on my 
 
 ## End note
 
-Hosting your own matrix, irc gateway, znc or thelounge servers might be complicated time consuming, and even expensive just to get reliably on irc. If you ask nicely on #lugola on freenode, you can get an account on any of these services we host :)
+Hosting your own matrix, irc gateway, znc or thelounge servers might be complicated and time consuming, and even expensive just to get reliably on irc. If you ask nicely on #lugola on freenode, you can get an account on any of these services we host :)
+
+ps. another option is [soju](https://sr.ht/~emersion/soju/) + [gamja](https://sr.ht/~emersion/gamja/), which can be had as a service from [sr.st](https://sourcehut.org/blog/2021-11-29-announcing-the-chat.sr.ht-public-beta/) or by asking me on irc.
+
 ---
 twitter_handle: gdamjan
 ---
